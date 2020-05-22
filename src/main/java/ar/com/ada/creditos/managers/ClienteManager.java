@@ -19,7 +19,7 @@ public class ClienteManager {
 
     public void setup() {
 
-        java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.OFF);
+        java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.ALL);
         final StandardServiceRegistry registry = new StandardServiceRegistryBuilder().configure() // configures settings
                                                                                                   // from
                                                                                                   // hibernate.cfg.xml
