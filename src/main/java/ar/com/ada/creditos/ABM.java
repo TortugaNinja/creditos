@@ -1,9 +1,12 @@
 package ar.com.ada.creditos;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
 import ar.com.ada.creditos.entities.Cliente;
+import ar.com.ada.creditos.entities.Prestamo;
 import ar.com.ada.creditos.excepciones.ClienteDNIException;
 import ar.com.ada.creditos.managers.ClienteManager;
 
@@ -94,6 +97,13 @@ public class ABM {
         if (domAlternativo != null)
             cliente.setDomicilioAlternativo(domAlternativo);
 
+        Prestamo prestamo = new Prestamo();
+        BigDecimal importe = new BigDecimal(5000);
+        prestamo.setImporte(importe); //forma A
+        prestamo.setFecha(new Date());//forma B
+        prestamo.setCuota(10);
+        prestamo.setFechaAlta(new Date());
+        prestamo.setCliente(cliente);
         ABMCliente.create(cliente);
 
         /*
